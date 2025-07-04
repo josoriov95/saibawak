@@ -478,5 +478,10 @@ input:checked{
     position: absolute;
     top: 40px;
     text-align: center;
-    left: calc(50% - 30px)
+    font-size: 22px;
+    left: calc(50% - 44px);
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    -webkit-text-stroke: 1px black;
+    font-weight: 900;
 }
