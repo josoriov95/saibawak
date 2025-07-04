@@ -1,0 +1,482 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+}
+
+body {
+    counter-reset:game;
+    min-height: 100vh;
+    width: 100%;
+    display: grid;
+    place-items: center;
+}
+
+.phone {
+    position: relative;
+    border: 6px solid #222;
+    width: 320px;
+    height: 640px;
+    border-radius: 20px;
+    box-shadow: 0 0 6px #222222FA;
+    background: url(./assets/namek.jpg) center top / cover no-repeat;
+    outline: 2px solid gray;
+    overflow: hidden;
+    /* clip-path: inset(0 round 20px); *Para forzar redondeado de layers**/
+}
+
+.phone::after {
+    position: absolute;
+    content: "";
+    width: 14px;
+    height: 14px;
+    background: radial-gradient(#000, #222, #111, #000);
+    border-radius: 50%;
+    left: 50%;
+    top: 12px;
+    transform: translateX(-50%);
+}
+
+.layer {
+    position: absolute;
+}
+
+.layer1 {
+    z-index: 1;
+    height: 450px;
+    width: 80px;
+    border: 1px solid black;
+    background-color: #9fc94a;
+    bottom: 0;
+    left: 60px;
+    border-top-left-radius: 100%;
+    border-top-right-radius: 100%;
+}
+
+.layer2 {
+    z-index: 2;
+    height: 450px;
+    width: 80px;
+    border: 1px solid black;
+    background-color: #9fc94a;
+    bottom: 0;
+    right: 60px;
+    border-top-left-radius: 100%;
+    border-top-right-radius: 100%;
+}
+
+.layer3 {
+    z-index: 3;
+    height: 390px;
+    width: 280px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 auto;
+    border-top-left-radius: 8%;
+    border-top-right-radius: 8%;
+    border: 1px solid black;
+    background: linear-gradient(135deg, teal 20%,black 20%, transparent 20%) -40px 0,
+        linear-gradient(-135deg, teal 20%,black 20%, #efe4b8 20.5%) -40px 0;
+    background-size: 40px 100%;
+}
+
+.layer4 {
+    z-index: 4;
+    height: 300px;
+    width: 80px;
+    border: 1px solid black;
+    background-color: #9fc94a;
+    bottom: 0;
+    left: 30px;
+    border-top-left-radius: 100%;
+    border-top-right-radius: 100%;
+}
+
+.layer5 {
+    z-index: 5;
+    height: 245px;
+    width: 150px;
+    border: 1px solid black;
+    background-color: #efe4b8;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-top-left-radius: 8%;
+    border-top-right-radius: 8%;
+    border: 1px solid black;
+    background: linear-gradient(135deg, teal 20%,black 20%, transparent 20%) -40px 0,
+        linear-gradient(-135deg, teal 20%,black 20%, #efe4b8 20.5%) -40px 0;
+    background-size: 40px 100%;
+}
+
+.layer6 {
+    z-index: 6;
+    height: 210px;
+    width: 80px;
+    border: 1px solid black;
+    background-color: #9fc94a;
+    bottom: 0;
+    right: 30px;
+    border-top-left-radius: 100%;
+    border-top-right-radius: 100%;
+}
+
+.layer7 {
+    z-index: 7;
+    height: 160px;
+    width: 150px;
+    border: 1px solid black;
+    background-color: #efe4b8;
+    right: 0;
+    bottom: 0;
+    border-top-left-radius: 8%;
+    border-top-right-radius: 8%;
+    border: 1px solid black;
+    background: linear-gradient(135deg, teal 20%,black 20%, transparent 20%) -40px 0,
+        linear-gradient(-135deg, teal 20%,black 20%, #efe4b8 21%) -40px 0;
+    background-size: 40px 100%;
+}
+
+.layer8 {
+    z-index: 8;
+    height: 130px;
+    width: 200px;
+    border: 1px solid black;
+    background-color: #4bb3af;
+    left: 0;
+    right: 0;
+    bottom: -15px;
+    margin: 0 auto;
+    border-radius: 50%;
+}
+
+.layer9 {
+    z-index: 9;
+    height: 90px;
+    width: 100px;
+    background-color: #fff;
+    left: 0;
+    bottom: 0;
+    border-radius: 50%;
+    box-shadow:
+        -30px -30px 0px 0px #fff,
+        -15px 10px 0px 0px #fff,
+        15px 10px 0px 0px #fff,
+        30px 0px 0px 0px #fff;
+}
+
+.layer10 {
+    z-index: 10;
+    height: 70px;
+    width: 100px;
+    background-color: #fff;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%;
+    box-shadow:
+        30px -30px 0px 0px #fff,
+        -20px 10px 0px 0px #fff,
+        -20px -15px 0px 0px #fff,
+        30px 20px 0px 0px #fff;
+}
+
+/** Character **/
+/* head */
+.head-top {
+    background: radial-gradient(#b4e355 50%, #8cb638);
+    border: 1px solid black;
+    width: 90px;
+    height: 85px;
+    position: absolute;
+    top: -50px;
+    left: -6px;
+    border-top-left-radius: 48%;
+    border-top-right-radius: 48%;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+.head-top::after {
+    content: "";
+    width: 1px;
+    height: 90px;
+    background-color: #000;
+    position: absolute;
+    left: 44px;
+}
+
+.head-bottom {
+    background: linear-gradient(135deg, #b1df55 49%, #84af2d);
+    border: 1px solid black;
+    width: 68px;
+    height: 68px;
+    position: absolute;
+    top: -5px;
+    left: 5px;
+    border-left-color: #afdf50;
+    border-top-color: #afdf50;
+    border-radius: 24px;
+    border-top-left-radius: 40px;
+    transform-origin: center center;
+    transform: rotateZ(45deg);
+}
+
+/* left eye */
+.eye {
+    background: radial-gradient(#ff0000, #a50202);
+    border: 1px solid black;
+    width: 18px;
+    height: 20px;
+    position: absolute;
+    top: 33px;
+    left: -1px;
+    border-top-left-radius: 50px;
+    transform: rotate(15deg) skew(-30deg);
+}
+
+.eye-ball {
+    background-color: black;
+    width: 4px;
+    height: 4px;
+    transform: skew(30deg);
+    border-radius: 50%;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+}
+
+/* right eye */
+.eye--right {
+    background: radial-gradient(#ff0000, #a50202);
+    border: 1px solid black;
+    width: 18px;
+    height: 20px;
+    position: absolute;
+    top: -1px;
+    right: 15px;
+    border-top-right-radius: 50px;
+    transform: rotate(-105deg) skew(30deg);
+}
+
+.eye-ball--right {
+    background-color: black;
+    width: 4px;
+    height: 4px;
+    transform: skew(-30deg);
+    border-radius: 50%;
+    position: absolute;
+    top: 10%;
+    right: 50%;
+}
+
+.mouth {
+    background: radial-gradient(#6b1c1c, #cc2b2b);
+    border: 1px solid black;
+    width: 40px;
+    height: 15px;
+    position: absolute;
+    transform: rotate(-45deg);
+    top: 40px;
+    right: -1px;
+    border-bottom-left-radius: 100%;
+    border-bottom-right-radius: 100%;
+}
+
+/* Left Ear*/
+.ear-outer {
+    background: radial-gradient(#b4e355 50%, #8cb638);
+    border: 1px solid black;
+    width: 12px;
+    height: 40px;
+    border-top-right-radius: 40px;
+    border-bottom-left-radius: 40px;
+    position: absolute;
+    transform: skew(10deg);
+    left: -14px;
+}
+
+.ear-inner {
+    background: radial-gradient(#163b04, #52b42b);
+    width: 12px;
+    height: 30px;
+    border-top-right-radius: 0;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 40px;
+    position: absolute;
+    transform: skew(10deg) scale(.4);
+    top: 10px;
+    left: -9px;
+}
+
+/* Right Ear*/
+.ear-outer--right {
+    background: radial-gradient(#b4e355 50%, #8cb638);
+    border: 1px solid black;
+    width: 12px;
+    height: 40px;
+    border-top-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    position: absolute;
+    transform: skew(-10deg);
+    right: -14px;
+}
+
+.ear-inner--right {
+    background: radial-gradient(#163b04, #52b42b);
+    width: 12px;
+    height: 30px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 40px;
+    position: absolute;
+    transform: skew(-10deg) scale(.4);
+    top: 10px;
+    right: -9px;
+}
+
+/** Animation **/
+.eye {
+    animation-name: blink;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes blink {
+    0% {
+        width: 15px;
+        top: 33px;
+        left: 3px;
+    }
+
+    5% {
+        width: 10px;
+        top: 33px;
+        left: 8px;
+    }
+
+    10% {
+        width: 0px;
+        background: black;
+        top: 33px;
+        left: 17px;
+    }
+    11%{
+        background: radial-gradient(#ff0000, #a50202);
+    }
+}
+
+.eye--right {
+    animation-name: blink--right;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes blink--right {
+    0% {
+        width: 15px;
+        top: 2px;
+        right:18px;
+    }
+
+    5% {
+        width: 10px;
+        top: 6px;
+        right: 20px;
+    }
+
+    10% {
+        width: 0px;
+        background: black;
+        top: 6px;
+        right: 22px;
+    }
+    11%{
+        background: radial-gradient(#ff0000, #a50202);
+    }
+}
+
+.eye-ball{
+    animation-name: blink-ball;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+.eye-ball--right{
+    animation-name: blink-ball;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+@keyframes blink-ball{
+    10%{
+        height: 0;
+    }
+    20%{
+        opacity: 0;
+    }
+}
+.mouth{
+    animation: shut-up 2s ease-in-out .4s infinite;
+}
+@keyframes shut-up{
+    0%{
+    }
+    40%{
+        width: 30px;
+        height: 10px;
+        top: 39px;
+        right: 7px;
+    }
+    80%{
+        width: 20px;
+        height: 10px;
+        top: 39px;
+        right: 10px;
+    }
+}
+
+input{
+        position: relative;
+        opacity: 0;
+        cursor: pointer;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        top: -50px;
+        z-index: 10;
+}
+
+@keyframes layer{
+    30%{
+        bottom: -20px;
+    }
+    40%{
+        bottom: -120px;
+    }
+    80%{
+        bottom: -100px;
+    }
+}
+.layer.layer1{
+    animation: layer 2s ease-in-out .5s infinite;
+}
+.layer.layer2{
+    animation: layer 3s ease-in infinite;
+}
+.layer.layer4{
+    animation: layer 2.5s ease-out infinite;
+}
+.layer.layer6{
+    animation: layer 1.5s ease infinite;
+}
+input:checked{
+    counter-increment: game;
+}
+.total::after{
+    content: counter(game);
+}
+.total{
+    position: absolute;
+    top: 40px;
+    text-align: center;
+    left: calc(50% - 30px)
+}
